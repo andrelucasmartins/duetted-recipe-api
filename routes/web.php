@@ -21,10 +21,19 @@ $router->get('/', function () use ($router) {
 $router->get('/receitas', ['uses' => 'ReceitaController@index']);
 
 $router->group(['prefix' => 'api'], function() use ($router){
-    $router->get('receitas', ['uses' => 'ReceitaController@index']);
-    $router->post('receitas', ['uses' => 'ReceitaController@store']);
-    $router->patch('receitas/{id}', ['uses' => 'ReceitaController@update']);
-    $router->delete('receitas/{id}', ['uses' => 'ReceitaController@destroy']);
+    $router->get('recipes', ['uses' => 'RecipeController@index']);
+    $router->get('recipes/{id}', ['uses' => 'RecipeController@show']);
+    $router->post('recipes', ['uses' => 'RecipeController@store']);
+    $router->put('recipes/{id}', ['uses' => 'RecipeController@update']);
+    $router->delete('recipes/{id}', ['uses' => 'RecipeController@destroy']);
+});
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('categories', ['uses' => 'CategoryController@index']);
+    $router->get('categories/{id}', ['uses' => 'CategoryController@show']);
+    $router->post('categories', ['uses' => 'CategoryController@store']);
+    $router->put('categories/{id}', ['uses' => 'CategoryController@update']);
+    $router->delete('categories/{id}', ['uses' => 'CategoryController@destroy']);
 });
 
 

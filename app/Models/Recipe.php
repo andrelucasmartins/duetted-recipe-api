@@ -4,18 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Receita extends Model
+class Recipe extends Model
 {
   // Defina a tabela, se o nome for diferente de 'receitas'
-  protected $table = 'receitas';
+  protected $table = 'recipes';
 
   // Campos que podem ser preenchidos
   protected $fillable = [
-    'titulo',
-    'descricao',
-    'ingredientes',
-    'preparo'];
+    'title',
+    'time',
+    'recipe_yield',
+    'ingredients',
+    'preparation_method',
+    'tips',
+    'category_id'
+  ];
 
   // Se você não usar timestamps, desabilite-os
-  public $timestamps = false;
+  public $timestamps = true;
 }

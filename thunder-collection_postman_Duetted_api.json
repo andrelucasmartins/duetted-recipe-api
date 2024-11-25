@@ -1,0 +1,122 @@
+{
+    "info": {
+        "_postman_id": "5e782fa0-c5a6-4d3c-8d2b-0355fb284635",
+        "name": "Duetted_api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "GET_ALL",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/api/receitas",
+                    "path": [
+                        "api",
+                        "receitas"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "CREATE",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/api/receitas/?titulo=Bolo de Cenora&descricao=Bolo de cenora com cobertura de chocolate&ingredientes=1/2 xicara de Cacau&preparo=Mexa e leve ao forno por 30min.",
+                    "query": [
+                        {
+                            "key": "titulo",
+                            "value": "Bolo de Cenora"
+                        },
+                        {
+                            "key": "descricao",
+                            "value": "Bolo de cenora com cobertura de chocolate"
+                        },
+                        {
+                            "key": "ingredientes",
+                            "value": "1/2 xicara de Cacau"
+                        },
+                        {
+                            "key": "preparo",
+                            "value": "Mexa e leve ao forno por 30min."
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "api",
+                        "receitas"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "UPDATE",
+            "request": {
+                "method": "PATCH",
+                "url": {
+                    "raw": "http://localhost:8000/api/receitas/2?titulo=Bolo de Cenora Cremoso&descricao=Bolo de cenora com cobertura de chocolate&ingredientes=1/2 xicara de Cacau&preparo=Mexa e leve ao forno por 30min.",
+                    "query": [
+                        {
+                            "key": "titulo",
+                            "value": "Bolo de Cenora Cremoso"
+                        },
+                        {
+                            "key": "descricao",
+                            "value": "Bolo de cenora com cobertura de chocolate"
+                        },
+                        {
+                            "key": "ingredientes",
+                            "value": "1/2 xicara de Cacau"
+                        },
+                        {
+                            "key": "preparo",
+                            "value": "Mexa e leve ao forno por 30min."
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "api",
+                        "receitas",
+                        "2"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "DELETE",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8000/api/receitas/1",
+                    "path": [
+                        "api",
+                        "receitas",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        }
+    ]
+}
