@@ -20,6 +20,11 @@ class Recipe extends Model
     'category_id'
   ];
 
+  public function category()
+  {
+    return $this->belongsTo(Category::class, 'category_id');
+  }
+
   // Se você não usar timestamps, desabilite-os
   public $timestamps = true;
 }

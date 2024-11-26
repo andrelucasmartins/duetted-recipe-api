@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -87,4 +88,29 @@ class RecipeController extends Controller
 
     return response()->json(['message' => 'Receita deletada com sucesso!']);
   }
+
+  // Filtrar receitas por categoria
+  public function filter(Request $request)
+  {
+    $query = Recipe::query();
+
+    if ($request->has('name')) {
+      $query->where('title', 'LIKE', '%' . $request->name . '%');
+    }
+
+    if ($request->has('category_id')) {
+      $query->where('category_id', $request->category_id);
+    }
+
+    if ($request->has('category')) {
+      $query->whereHas('category', function ($q) use ($request) {
+        $q->where('name', 'LIKE', '%' . $request->category . '%');
+      });
+    }
+
+    $recipes = $query->get();
+    return response()->json($recipes);
+  }
+
 }
+

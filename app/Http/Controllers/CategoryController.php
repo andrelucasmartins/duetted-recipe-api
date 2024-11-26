@@ -14,10 +14,9 @@ class CategoryController extends Controller{
 
   public function show($id)
   {
-    $category =
-      Category::findOrFail($id);
-
-      try{
+    
+    try{
+        $category = Category::findOrFail($id);
         return response()->json($category);
       }catch(\Exception $e){
         return response()->json(['error' => 'Categoria não encontrada'], 404);
